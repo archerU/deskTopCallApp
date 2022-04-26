@@ -1,17 +1,337 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=gbk">
-    <meta charset="gbk">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta charset="utf-8">
     <meta name="data-spm" content="a2638g">
     <title>旺旺亮灯唤端测试</title>
+    <style>
+        body {
+            position: relative;
+        }
+        img {
+            cursor: pointer;
+            width: 300px;
+        }
+        .table {
+           margin-top: 100px;
+           margin-left: 50px;
+        }
+        .table th,td {
+            padding: 10px;
+        }
+        .button {
+            color: blue;
+            cursor: pointer;
+        }
+        .error {
+            background-color: red;
+            color: #fff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        .success {
+            background-color: green;
+            color: #fff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+        .info {
+            background-color:blue;
+            color: #fff;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 12px;
+        }
+    </style>
 </head>
 <body>
-    <div id="click">
+    <!-- <div id="click">
         <img style="width:30px" src="https://gw.alicdn.com/imgextra/i1/O1CN01EPAvYw1EV5k6BROCC_!!6000000000356-2-tps-140-144.png">
-    </div>
-
+    </div> -->
+    <table border cellspacing class="table">
+        <caption>非异步请求中的唤端</caption>
+        <tr>
+            <th>协议</th>
+            <th>方法</th>
+            <th>行为描述</th>
+            <th>是否安装</th>
+            <th>Chrome打开</th>
+            <th>Firefox打开</th>
+            <th>Safari打开</th>
+        </tr>
+         <!-- window.open -->
+        <tr>
+            <td>aliim://</td>
+            <td>
+                <div class="button" id="click0">
+                    window.open("aliim://")
+                </div>
+            </td>
+            <th>打开新窗口</th>
+            <td>否</td>
+            <td>
+                <img src="https://img.alicdn.com/imgextra/i4/O1CN01KagGlE1NKP3B0MSZ4_!!6000000001551-2-tps-946-284.png" />
+                <div>
+                    <span class="error">无法唤端</span>
+                    <span class="info">打开新窗口</span>
+                    <span class="info">浏览器不拦截</span>
+                </div>
+            </td>
+            <td>
+                <img src="https://img.alicdn.com/imgextra/i2/O1CN01nLc6qB1GX2fW9waX9_!!6000000000631-2-tps-2096-1186.png"/>
+                <div>
+                    <span class="error">无法唤端</span>
+                    <span class="info">打开新窗口</span>
+                    <span class="info">浏览器不拦截</span>
+                </div>
+            </td>
+            <td>
+                <img src="https://img.alicdn.com/imgextra/i3/O1CN011EBHGX24kzWR5U7iC_!!6000000007430-2-tps-2190-1168.png"/>
+                <div>
+                    <span class="error">无法唤端</span>
+                    <span class="info">打开新窗口</span>
+                    <span class="info">浏览器不拦截</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>aliim://</td>
+            <td>
+                <div class="button" id="click3">
+                    window.open("aliim://")
+                </div>
+            </td>
+            <th>打开新窗口</th>
+            <td>是</td>
+            <td>
+                <img src="https://img.alicdn.com/imgextra/i2/O1CN019k31Ik1b7wttzz3Qp_!!6000000003419-2-tps-1656-616.png" />
+                <div>
+                    <span class="success">唤端成功</span>
+                    <span class="info">打开新窗口</span>
+                    <span class="info">浏览器不拦截</span>
+                </div>
+            </td>
+            <td>
+                <img src="https://img.alicdn.com/imgextra/i4/O1CN01hTkQBj1t9TIloLnvS_!!6000000005859-2-tps-1504-674.png"/>
+                <div>
+                    <span class="success">唤端成功</span>
+                    <span class="info">打开新窗口</span>
+                    <span class="info">浏览器不拦截</span>
+                </div>
+            </td>
+            <td>
+                <img src="https://img.alicdn.com/imgextra/i3/O1CN011nFBqg1HzGh3UpOXG_!!6000000000828-2-tps-2238-1108.png"/>
+                <div>
+                    <span class="success">唤端成功</span>
+                    <span class="info">打开新窗口</span>
+                    <span class="info">浏览器不拦截</span>
+                </div>
+            </td>
+        </tr>
+        <!-- location.href -->
+        <tr>
+            <td>aliim://</td>
+            <td>
+                <div class="button" id="click1">
+                    <div>location.href = "aliim://"</div>
+                    <!-- <div>top.location.href = "aliim://"</div>
+                    <div>parent.location.href = "aliim://"</div> -->
+                </div>
+            </td>
+            <th>本窗口打开</th>
+            <td>否</td>
+            <td>
+                <img src="https://img.alicdn.com/imgextra/i4/O1CN01rrrG3027QKUvISAmP_!!6000000007791-2-tps-976-106.png" />
+                <div>
+                    <span class="error">无法唤端</span>
+                    <span class="info">本窗口报错</span>
+                </div>
+            </td>
+            <td>
+                <img src="https://img.alicdn.com/imgextra/i2/O1CN01d7rB4O1d3UH8wDJlH_!!6000000003680-2-tps-1900-92.png"/>
+                <div>
+                    <span class="error">无法唤端</span>
+                    <span class="info">本窗口报错</span>
+                    <!-- <span class="info">未出现浏览器拦截信息</span> -->
+                </div>
+            </td>
+            <td>
+                <img src="https://img.alicdn.com/imgextra/i3/O1CN011EBHGX24kzWR5U7iC_!!6000000007430-2-tps-2190-1168.png"/>
+                <div>
+                    <span class="error">无法唤端</span>
+                    <span class="info">本窗口打开</span>
+                    <span class="info">浏览器不拦截</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>aliim://</td>
+            <td>
+                <div class="button" id="click4">
+                    <div>location.href = "aliim://"</div>
+                    <!-- <div>top.location.href = "aliim://"</div>
+                    <div>parent.location.href = "aliim://"</div> -->
+                </div>
+            </td>
+            <th>本窗口打开</th>
+            <td>是</td>
+            <td>
+                <img src="https://img.alicdn.com/imgextra/i2/O1CN01VRtoKg1RGW9XWI384_!!6000000002084-2-tps-1798-616.png" />
+                <div>
+                    <span class="success">唤端成功</span>
+                    <span class="info">本窗口唤起</span>
+                    <span class="info">浏览器不拦截</span>
+                </div>
+            </td>
+            <td>
+                <img src="https://img.alicdn.com/imgextra/i1/O1CN016RcoAA27UuSk4eAAh_!!6000000007801-2-tps-1590-634.png"/>
+                <div>
+                    <span class="success">唤端成功</span>
+                    <span class="info">本窗口唤起</span>
+                    <span class="info">浏览器不拦截</span>
+                </div>
+            </td>
+            <td>
+                <img src="https://img.alicdn.com/imgextra/i1/O1CN01bqGOmM1W3lCOaAgrB_!!6000000002733-2-tps-1958-1160.png"/>
+                <div>
+                    <span class="success">唤端成功</span>
+                    <span class="info">本窗口唤起</span>
+                    <span class="info">浏览器不拦截</span>
+                </div>
+            </td>
+        </tr>
+        <!-- a 标签 -->
+        <tr>
+            <td>aliim://</td>
+            <td>
+                <div class="button">
+                    <div>
+                        <a href="aliim://" >aliim:// (target="")</a>
+                        <br>
+                        <a href="aliim://" target="_blank" >aliim://  ( target="_blank")</a>
+                    </div>
+                </div>
+            </td>
+            <th>本窗口打开</th>
+            <td>否</td>
+            <td>
+                <!-- <img src="https://img.alicdn.com/imgextra/i4/O1CN01rrrG3027QKUvISAmP_!!6000000007791-2-tps-976-106.png" /> -->
+                <div>
+                    <span class="error">无法唤端</span>
+                    <span class="info">本窗口报错</span>
+                </div>
+            </td>
+            <td>
+                <!-- <img src="https://img.alicdn.com/imgextra/i2/O1CN01d7rB4O1d3UH8wDJlH_!!6000000003680-2-tps-1900-92.png"/> -->
+                <div>
+                    <span class="error">无法唤端</span>
+                    <span class="info">本窗口报错</span>
+                    <!-- <span class="info">未出现浏览器拦截信息</span> -->
+                </div>
+            </td>
+            <td>
+                <!-- <img src="https://img.alicdn.com/imgextra/i3/O1CN011EBHGX24kzWR5U7iC_!!6000000007430-2-tps-2190-1168.png"/> -->
+                <div>
+                    <span class="error">无法唤端</span>
+                    <span class="info">本窗口打开</span>
+                    <span class="info">浏览器不拦截</span>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>aliim://</td>
+            <td>
+                <div class="button">
+                    <div>
+                        <a href="aliim://" >aliim:// (target="")</a>
+                    </div>
+                </div>
+            </td>
+            <th>本窗口打开</th>
+            <td>是</td>
+            <!-- <td>
+                <img src="https://img.alicdn.com/imgextra/i2/O1CN01VRtoKg1RGW9XWI384_!!6000000002084-2-tps-1798-616.png" />
+                <div>
+                    <span class="success">唤端成功</span>
+                    <span class="info">本窗口唤起</span>
+                    <span class="info">浏览器不拦截</span>
+                </div>
+            </td>
+            <td>
+                <img src="https://img.alicdn.com/imgextra/i1/O1CN016RcoAA27UuSk4eAAh_!!6000000007801-2-tps-1590-634.png"/>
+                <div>
+                    <span class="success">唤端成功</span>
+                    <span class="info">本窗口唤起</span>
+                    <span class="info">浏览器不拦截</span>
+                </div>
+            </td>
+            <td>
+                <img src="https://img.alicdn.com/imgextra/i1/O1CN01bqGOmM1W3lCOaAgrB_!!6000000002733-2-tps-1958-1160.png"/>
+                <div>
+                    <span class="success">唤端成功</span>
+                    <span class="info">本窗口唤起</span>
+                    <span class="info">浏览器不拦截</span>
+                </div>
+            </td> -->
+        </tr>
+        <tr>
+            <td>aliim://</td>
+            <td>
+                <div class="button">
+                    <div>
+                        <a href="aliim://" target="_blank" >aliim://  ( target="_blank")</a>
+                    </div>
+                </div>
+            </td>
+            <th>本窗口打开</th>
+            <td>是</td>
+            <td>
+                <img src="https://img.alicdn.com/imgextra/i2/O1CN019k31Ik1b7wttzz3Qp_!!6000000003419-2-tps-1656-616.png" />
+                <div>
+                    <span class="success">唤端成功</span>
+                    <span class="info">打开新窗口</span>
+                    <span class="info">浏览器不拦截</span>
+                </div>
+            </td>
+            <td>
+                <img src="https://img.alicdn.com/imgextra/i4/O1CN01hTkQBj1t9TIloLnvS_!!6000000005859-2-tps-1504-674.png"/>
+                <div>
+                    <span class="success">唤端成功</span>
+                    <span class="info">打开新窗口</span>
+                    <span class="info">浏览器不拦截</span>
+                </div>
+            </td>
+            <td>
+                <img src="https://img.alicdn.com/imgextra/i3/O1CN011nFBqg1HzGh3UpOXG_!!6000000000828-2-tps-2238-1108.png"/>
+                <div>
+                    <span class="success">唤端成功</span>
+                    <span class="info">本窗口唤起 （这个行为在 safari 不一致，着重强调）</span>
+                    <span class="info">浏览器不拦截</span>
+                </div>
+            </td>
+        </tr>
+    </table>
     
 
+    <script>
+        var DEFAULT_API = 'https://sale.1688.com/sale/media/live/ap3o2yp5.html?__pageId__=231757&cms_id=231757';
+        var uri = 'aliim://';
+        document.getElementById('click0').addEventListener("click", function() {
+            window.open(uri);
+        });
+        document.getElementById('click1').addEventListener("click", function() {
+            location.href = uri;
+        });
+        document.getElementById('click3').addEventListener("click", function() {
+            window.open(uri);
+        });
+        document.getElementById('click4').addEventListener("click", function() {
+            location.href = uri;
+        });
+
+    </script>
 </body>
 </html>

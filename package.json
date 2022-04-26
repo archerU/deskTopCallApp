@@ -1,0 +1,25 @@
+{
+  "name": "desktop-callapp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/archerU/desktop-callapp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/archerU/desktop-callapp/issues"
+  },
+  "homepage": "https://github.com/archerU/desktop-callapp#readme",
+  "devDependencies": {
+    "webpack": "^5.72.0",
+    "webpack-dev-middleware": "^5.3.1",
+    "webpack-dev-server": "^4.8.1"
+  }
+}
