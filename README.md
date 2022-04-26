@@ -31,9 +31,7 @@
 1、window.open 打开新窗口， 可能会被拦截，可以使用 `setTimeout(`window.open(aliim:);`, 50);` 防止拦截
 2、location.href 在本窗口打开 
 3、可以使用 a 标签模拟 click事件，打开新的窗口
-
-
-
+****** 4、不要在 控制台测试这些方法，不准
 
 
 https://juejin.cn/post/6844904071355187208
