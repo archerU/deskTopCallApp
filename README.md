@@ -36,3 +36,7 @@
 
 https://juejin.cn/post/6844904071355187208
 https://www.cnblogs.com/Qian123/p/5345298.html
+
+
+window.open 方法 没有经过用户行为点击的打开窗口 会被浏览器拦截：
+例如直接在代码里面写： window.open('https://taobao.com'); 就会被拦截，但是绑定了点击事件就不会；另外ajax异步中也会被拦截
