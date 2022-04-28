@@ -319,6 +319,7 @@
         </tr>
     </table>
     
+    <!-- 是否阻止弹窗（非异步） -->
     <table border cellspacing class="table">
         <caption>是否阻止弹窗（非异步）</caption>
         <tr>
@@ -360,6 +361,51 @@
             <td>否</td>
             <td>否</td>
             <td>否</td>
+        </tr>
+    </table>
+
+    <!-- 是否阻止弹窗（异步） -->
+    <table border cellspacing class="table">
+        <caption>是否阻止弹窗（非异步）</caption>
+        <tr>
+            <th>方法</th>
+            <th>Chrome 是否被浏览器拦截</th>
+            <th>Firefox 是否被浏览器拦截</th>
+            <th>Safari 是否被浏览器拦截</th>
+        </tr>
+        <tr>
+            <td>
+                <div onclick="window.open('https://taobao.com')">window.open('https://taobao.com')</div>
+            </td>
+            <td>是</td>
+            <td>是</td>
+            <td>是</td>
+        </tr>
+        <tr>
+            <td>
+                <div onclick="setTimeout(window.open('https://taobao.com'),500)">setTimeout(window.open('https://taobao.com'),500)</div>
+            </td>
+            <td>是</td>
+            <td>是</td>
+            <td>是</td>
+        </tr>
+        <tr>
+            <td>js mock a标签行为 
+                <div onclick="var a = document.createElement('a');
+                a.setAttribute('href', 'https://taobao.com');
+                a.setAttribute('target', '_blank');
+                document.body.appendChild(a);
+                a.click();">
+                    var a = document.createElement('a');
+                    a.setAttribute('href', 'https://taobao.com');
+                    a.setAttribute('target', '_blank');
+                    document.body.appendChild(a);
+                    a.click();
+                </div>
+            </td>
+            <td>是</td>
+            <td>是</td>
+            <td>是</td>
         </tr>
     </table>
 
