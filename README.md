@@ -42,6 +42,8 @@ window.open 方法， 没有经过用户行为点击的打开窗口 会被浏览
 
 https://juejin.cn/post/6844904071355187208
 
+https://juejin.cn/post/6844903472752492558
+
 https://www.cnblogs.com/Qian123/p/5345298.html
 
 https://wangyd.com/post/159
